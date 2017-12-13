@@ -1,0 +1,28 @@
+﻿@model PacificBlog.Models.BlogModel
+@{
+    ViewBag.Title = Model.BlogTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .bgr-Img {
+        background: url('../../Content/Images/OwlBackground.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    .long-textbox {
+        max-width: none !important;
+    }
+</style>
+
+<div style="border-width:medium; border-color:cadetblue">
+    <div class="container">
+        <h2>@ViewBag.Title</h2>
+        <h1>By  @Html.LabelFor(model => model.Writer, null, new { @class = "form-control long-textbox" })</h1>
+        <p>@Model.Content</p>
+
+    </div>
+</div>

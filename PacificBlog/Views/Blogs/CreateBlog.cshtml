@@ -1,0 +1,37 @@
+﻿@model PacificBlog.Models.BlogModel
+@{
+    ViewBag.Title = "Create Blog";
+}
+
+<style>
+    .bgr-Img {
+        background: url('../../Content/Images/OwlBackground.png');
+        background-size: cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        height:100%;
+    }
+    .long-textbox {
+        max-width:none !important;
+    }
+</style>
+
+<div style="border-width:medium; border-color:cadetblue">
+    <div class="container">
+        <h2>@ViewBag.Title</h2>
+        <form>
+            <div class="form-group">
+                <label for="usr">Blog Title:</label>
+                @Html.TextBoxFor(model => model.BlogTitle, null, new { @class = "form-control long-textbox" })
+            </div>
+            <div class="form-group">
+                <label for="pwd">Writer:</label>
+                @Html.TextBoxFor(model => model.Writer, null, new { @class = "form-control long-textbox" })
+            </div>
+            <div class="form-group">
+                <label for="pwd">Content:</label>
+                @Html.TextBoxFor(model => model.Content, null, new { @class = "form-control long-textbox", @rows = 100 })
+            </div>
+        </form>
+    </div>
+</div>
